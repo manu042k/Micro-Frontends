@@ -7,7 +7,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/shell",
@@ -23,7 +23,10 @@
           }
         ],
         "styles": ["apps/shell/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/shell/webpack.config.ts"
+        }
       },
       "configurations": {
         "production": {
@@ -39,7 +42,10 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/shell/webpack.prod.config.ts"
+          }
         },
         "development": {
           "buildOptimizer": false,
@@ -53,7 +59,11 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nx/angular:module-federation-dev-server",
+      "options": {
+        "port": 4200,
+        "publicHost": "http://localhost:4200"
+      },
       "configurations": {
         "production": {
           "buildTarget": "shell:build:production"
@@ -84,6 +94,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "shell:build",
+        "port": 4200,
         "spa": true
       }
     }

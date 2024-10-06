@@ -11,4 +11,12 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 })
 export class AppComponent {
   title = 'shell';
+
+  navigateTo(urlString: string) {
+    console.log(urlString);
+  }
+
+  test(evnt: Event) {
+    console.log('Test Clicked');
+  }
 }
