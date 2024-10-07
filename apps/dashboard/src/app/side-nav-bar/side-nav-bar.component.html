@@ -1,0 +1,115 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Toggle Button for Sidebar (Only visible on small screens) -->
+    <button (click)="toggleSidebar()" class="btn btn-primary d-md-none">
+      ☰ Menu
+    </button>
+
+    <!-- Side Navbar -->
+    <nav
+      id="sidebar"
+      [ngClass]="{ active: isSidebarActive }"
+      class="col-md-3 col-lg-2 d-md-block bg-light sidebar"
+    >
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active">
+              <span class="icon">🏠</span>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <span class="icon">📄</span>
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <span class="icon">🛒</span>
+              Shop
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <span class="icon">📞</span>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <h1 class="h2">Main Content</h1>
+
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="Card image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card 1</h5>
+              <p class="card-text">This is a description for card 1.</p>
+              <a class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="Card image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card 2</h5>
+              <p class="card-text">This is a description for card 2.</p>
+              <a class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="Card image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card 3</h5>
+              <p class="card-text">This is a description for card 3.</p>
+              <a class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="Card image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card 4</h5>
+              <p class="card-text">This is a description for card 4.</p>
+              <a class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
